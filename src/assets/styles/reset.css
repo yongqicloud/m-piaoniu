@@ -23,10 +23,9 @@ html {
 body {
   margin: 0;
   font-size: 0.14em;
-  line-height: 1.5;
+  line-height: 1.2;
   -webkit-font-smoothing: antialiased;
   font-family: PingFangSC-Regular, Hiragino Sans GB, sans-serif }
-
 ul,
 ol,
 dl,

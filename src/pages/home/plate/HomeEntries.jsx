@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import {HomeEntriesWrap} from './styledHomeEntries'
+import {HomeEntriesWrap} from '../styles/styledHomeEntries'
 
 // main-img
 import category01 from 'assets/images/homeentries/category-large-1.png'
@@ -20,22 +20,27 @@ export default class HomeEntries extends Component {
   state={
     mainCategories:[
       {
+        id:1,
         title:'演唱会',
         category:category01,
       },
       {
+        id:2,
         title:'话剧歌剧',
         category:category02
       },
       {
+        id:3,
         title:'休闲展览',
         category:category03
       },
       {
+        id:4,
         title:'体育赛事',
         category:category04
       },
       {
+        id:5,
         title:'音乐会',
         category:category05
       }
@@ -74,7 +79,11 @@ export default class HomeEntries extends Component {
         <div className="main-categories">
           {
             this.state.mainCategories.map((item)=>(
-              <a href="javascript:;" className="entry" key={item.key}>
+              <a 
+                href=""
+                className="entry" 
+                key={item.id} 
+              >
                 <img src={item.category} alt=""/>
                 <div className="title">{item.title}</div>
               </a>
@@ -84,7 +93,11 @@ export default class HomeEntries extends Component {
         <div className="sub-categories">
           {
             this.state.subCategories.map(item=>(
-              <a href="javascript:;" className="entry">
+              <a 
+                href=""
+                className="entry" 
+                key={item.id}
+              >
                 <img src={item.category} alt=""/>
                 <div className="title">{item.title}</div>
               </a>

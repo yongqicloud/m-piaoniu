@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { BannerWrap }from './styledBanner'
+import { BannerWrap }from '../styles/styledBanner'
 import SelfCarousel from './SelfCarousel'
 export default function Banner() {
   return (

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {HeaderWrap} from './styledHeader'
+import {HeaderWrap} from '../styles/styledHeader'
 
 export default function Header() {
   return (
@@ -13,7 +13,7 @@ export default function Header() {
         </div>
       </div>
       <div className="profile">
-        <a href="javascript:;" className="person-icon"></a>
+        <a className="person-icon" onClick={()=>false}></a>
       </div>
     </HeaderWrap>
   )

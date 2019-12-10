@@ -1,9 +1,9 @@
 const proxy = require('http-proxy-middleware');
 module.exports = function(app) {
   app.use(
-    'v2',
+    '/api',
     proxy({
-      target: 'https://as-vip.missfresh.cn',
+      target: 'https://m.piaoniu.com',
       changeOrigin: true,
     })
   )

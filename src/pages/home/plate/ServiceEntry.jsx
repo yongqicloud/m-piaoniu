@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {ServiceWrap} from './ServiceWrap'
+import {ServiceWrap} from '../styles/styeldService'
 
 export default function ServiceEntry() {
   return (
