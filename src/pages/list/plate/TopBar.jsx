@@ -10,6 +10,7 @@ export default function TopBar() {
       <button className="back">返回</button>
       <Search></Search>
       <button className="cancel">取消</button>
+      
     </TopBarWrap>
   )
 }
