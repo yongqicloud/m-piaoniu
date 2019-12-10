@@ -2,7 +2,6 @@ import React from 'react'
 import {ItemWrap} from './styles/styedItem'
 
 export default function Item(props) {
-  console.log(props)
   let {poster,star,shortname,venueName,timeRange,lowPrice} = props.data.recommendContent
   return (
     <ItemWrap>

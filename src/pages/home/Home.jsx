@@ -8,12 +8,13 @@ import ServiceEntry from 'pages/home/plate/ServiceEntry'
 import Discount from 'pages/home/plate/Discount'
 import GuessLike from 'pages/home/plate/GuessLike'
 
-export default function Home() {
+export default function Home(props) {
+  console.log('prpos',props)
   return (
     <>
       <Header></Header>
       <Banner></Banner>
-      <HomeEntries></HomeEntries>
+      <HomeEntries ></HomeEntries>
       <OperatingPosition></OperatingPosition>
       <ServiceEntry></ServiceEntry>
       <Discount></Discount>
