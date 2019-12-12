@@ -4,7 +4,7 @@ import {PickerFilterWrap} from './styledPickerFilter'
 
 export default class PickerFilter extends Component {
   state={
-    currentPicker:'sort',
+    currentPicker:'',
     sort:false,
     date:false
   }
@@ -14,10 +14,10 @@ export default class PickerFilter extends Component {
         sort:false,
         date:false
       }
-    }
+    } 
+    return null
   }
-  handleSortClick=(val)=>()=>{
-    console.log(0)
+  handleSortClick=(val)=>async ()=>{
     let display = this.props.overLay.display
     if(display === 'block' && this.state.currentPicker === val){
       this.props.onChangeDisplay({
@@ -30,25 +30,35 @@ export default class PickerFilter extends Component {
         isShow:true
       })
     }
+    
+    
     this.setState((state)=>{
       return {
         [val]:!state.sort,
         currentPicker:val
       }
     })
+    // if(val === this.state.currentPicker){
+    //   await this.setState((state)=>{
+    //     return {
+    //       [val]:false,
+    //       currentPicker:''
+    //     }
+    //   })
+    // }
   }
   render() {
     return (
       <PickerFilterWrap>
         <div className="main-menu-wrap">
           <div 
-            className="item icon sort"
+            className={`item icon sort ${this.state.sort ? 'active' : ''}`}
             onClick={this.handleSortClick('sort')}
           >
             综合排序
           </div>
           <div 
-            className="item icon time-picker"
+            className={`item icon time-picker ${this.state.date ? 'active' : ''}`}
             onClick={this.handleSortClick('date')}
           >
             时间选择

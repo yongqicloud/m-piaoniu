@@ -43,7 +43,7 @@ class TopBar extends Component {
     })
   }
   goBack=()=>{
-    this.props.history.goBack()
+    this.props.history.push("/home")
   }
   render() {
     return (

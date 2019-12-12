@@ -6,6 +6,10 @@ export const GuessLikeWrap = styled.div`
     padding: 0 14px;
   }
   .wrap{
-    
+    #observe{
+      width:100%;
+      height:1px;
+      background:transparent;
+    }
   }
 `

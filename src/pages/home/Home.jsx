@@ -7,18 +7,22 @@ import OperatingPosition from 'pages/home/plate/OperatingPosition'
 import ServiceEntry from 'pages/home/plate/ServiceEntry'
 import Discount from 'pages/home/plate/Discount'
 import GuessLike from 'pages/home/plate/GuessLike'
-
+import UnlimitedList from '@/UnlimitedList'
 export default function Home(props) {
-  console.log('prpos',props)
   return (
     <>
-      <Header></Header>
-      <Banner></Banner>
-      <HomeEntries ></HomeEntries>
-      <OperatingPosition></OperatingPosition>
-      <ServiceEntry></ServiceEntry>
-      <Discount></Discount>
-      <GuessLike></GuessLike>
+      <Header/>
+      <Banner/>
+      <HomeEntries/>
+      <OperatingPosition/>
+      <ServiceEntry/>
+      <Discount/>
+      <GuessLike>
+        <UnlimitedList
+          type="home"
+          path="/api/v2/home/recommends"
+        ></UnlimitedList>
+      </GuessLike>
     </>
   )
 }

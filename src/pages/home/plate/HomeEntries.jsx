@@ -21,7 +21,7 @@ class HomeEntries extends Component {
             list.map((item)=>(
               item.type ===  'max' &&
               <Link 
-                to="/list"
+                to={`/list/${item.categoryId}`}
                 className="entry" 
                 key={item.id} 
               >
@@ -35,14 +35,14 @@ class HomeEntries extends Component {
           {
             list.map(item=>(
               item.type ===  'min' &&
-              <a 
-                href=""
+              <Link 
+                to={`/list/${item.categoryId}`}
                 className="entry" 
                 key={item.id}
               >
                 <img src={item.category} alt=""/>
                 <div className="title">{item.title}</div>
-              </a>
+              </Link>
             ))
           }
         </div>

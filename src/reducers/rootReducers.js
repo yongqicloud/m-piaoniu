@@ -20,60 +20,70 @@ const defaultState = {
       title:'演唱会',
       category:category01,
       type:'max',
+      categoryId:2
     },
     {
       id:2,
       title:'话剧歌剧',
       category:category02,
       type:'max',
+      categoryId:5
     },
     {
       id:3,
       title:'休闲展览',
       category:category03,
       type:'max',
+      categoryId:9999
     },
     {
       id:4,
       title:'体育赛事',
       category:category04,
       type:'max',
+      categoryId:8
     },
     {
       id:5,
       title:'音乐会',
       category:category05,
       type:'max',
+      categoryId:3
     },
     {
       id:6,
       title:'儿童亲子',
       category:categorySub01,
       type:'min',
+      categoryId:4
     },
     {
       id:7,
       title:'戏曲综艺',
       category:categorySub02,
       type:'min',
+      categoryId:7
     },
     {
       id:8,
       title:'舞蹈芭蕾',
       category:categorySub03,
       type:'min',
+      categoryId:6
     },
     {
       id:9,
       title:'旅游玩乐',
       category:categorySub04,
       type:'min',
+      categoryId:9
     },
     {
       id:10,
       title:'更多精彩',
       category:categorySub05,
       type:'min',
+      categoryId:0
     },
   ],
 }

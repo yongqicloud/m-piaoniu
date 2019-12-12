@@ -3,12 +3,15 @@ import React, { Component,useState, useEffect } from 'react'
 import TopBar from './plate/TopBar'
 import Nav from './plate/Nav'
 import PickerFilter from './pickerFilter/PickerFilter'
+import Item from '@/Item'
+import UnlimitedList from '@/UnlimitedList'
+
 import {ListContaienrWrap} from './styles/styledListContainer'
 import {OverlayWrap} from './styles/styledOverlay'
 import {get} from 'utils/http'
-import Item from '@/Item'
 
 export default (props)=>{
+  let {params} = props.match
   const [state, setState] = useState({
     list:[]
   })
@@ -44,24 +47,11 @@ export default (props)=>{
           onChangeDisplay={setOverLay}
        ></PickerFilter>
        <ListContaienrWrap>
-        {
-          state.list.map(item =>(
-            item.activityType === 2
-              ?<div 
-                key={item.id}
-                style={{display:'block!important'}}
-                className="ad-img"
-              >
-                <img src={item.poster} alt=""/>
-              </div>
-              :<Item 
-                type='list'
-                key={item.id}
-                data={item}
-              />
-              
-          ))
-        }
+        <UnlimitedList 
+          categoryId={params.categoryId}
+          path="/api/v3/activities"
+          type="list"
+        ></UnlimitedList>
        </ListContaienrWrap>
        <OverlayWrap
         display={overLay.display}

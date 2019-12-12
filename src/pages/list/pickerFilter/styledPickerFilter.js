@@ -21,9 +21,6 @@ export const PickerFilterWrap = styled.div`
       text-align: center;
       padding: 10px 0;
       border-bottom: 1px solid #e6e6e6;
-      &.active{
-        color:#ea3667;
-      }
       &.icon::after{
         content: "";
         display: inline-block;
@@ -34,6 +31,14 @@ export const PickerFilterWrap = styled.div`
         height: 0;
         border: 3px solid transparent;
         border-top-color: #666;
+      }
+      &.icon.active::after{
+        top:-.03rem;
+        border-top-color: transparent;
+        border-bottom-color: #ea3667;
+      }
+      &.active{
+        color:#ea3667;
       }
     }
   }

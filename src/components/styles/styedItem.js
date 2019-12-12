@@ -1,4 +1,17 @@
 import styled from 'styled-components'
+export const ImgWrap = styled.div`
+  width:100%;
+  img{
+      width: 100%;
+      box-sizing: border-box;
+      display: block;
+      padding: 14px;
+      padding-bottom: 0;
+      background-color: #fff
+  }
+  
+`
+
 export const ItemWrap = styled.div`
   padding:0 .15rem;
   position:relative;
@@ -41,13 +54,28 @@ export const ItemWrap = styled.div`
         font-family: Helvetica Neue,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans;
         font-weight: 600;
         padding:0;
-        .city{
-          
-        }
-        .activity-tag{
-    
+        
         }
       }
+      .activity-tag{
+          flex-shrink: 0;
+          max-width: .40rem;
+          margin-left: .04rem;
+          color: #fff;
+          .status-1{
+            margin-right: 5px;
+            border-radius: 2px;
+            padding: 1px;
+            width: 15px;
+            height: 15px;
+            background-color: #96a3ff;
+            box-sizing: border-box;
+            bottom: 12px;
+            text-align: center;
+            font-size: 10px;
+            display: inline-block;
+}
+          }
 
     }
     .time-address{
@@ -88,6 +116,14 @@ export const ItemWrap = styled.div`
         color: #999;
         transform: scale(.8);
         transform-origin:left bottom;
+      }
+      .status-text{
+        font-size: 10px;
+        color: #999;
+        width: 45px;
+        line-height: 19px;
+        text-align: center;
+        background-color: #f0f0f0;
       }
     }
   }

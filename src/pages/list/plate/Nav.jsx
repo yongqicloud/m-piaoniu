@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStore } from 'react-redux'
 import { NavWrap } from "../styles/styledNav";
-import {Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 
 export default function Nav() {
   const store = useStore()
@@ -10,8 +10,8 @@ export default function Nav() {
   myList.unshift({
       id:9999,
       title:'全部分类',
-      
       type:'min',
+      categoryId:0
   })
   // root
   return (
@@ -20,13 +20,14 @@ export default function Nav() {
         <div className="nav-menu">
           {
             myList.map(item => (
-              <Link
+              <NavLink
+                activeClassName="active"
                 key={item.id}
-                to="/list"
-                className={item.id === 9999 ? 'active' : ''}
+                to={`/list/${item.categoryId}`}
+                // className={item.id === 9999 ? 'active' : ''}
               >
                 {item.title} 
-              </Link>
+              </NavLink>
             ))
           }
         </div>

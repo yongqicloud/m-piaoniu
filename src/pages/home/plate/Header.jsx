@@ -1,6 +1,7 @@
 import React from 'react'
 
 import {HeaderWrap} from '../styles/styledHeader'
+import {Link} from 'react-router-dom'
 
 export default function Header() {
   return (
@@ -13,7 +14,11 @@ export default function Header() {
         </div>
       </div>
       <div className="profile">
-        <a className="person-icon" onClick={()=>false}></a>
+        <Link 
+          className="person-icon" 
+          to="/user"
+        >
+        </Link>
       </div>
     </HeaderWrap>
   )

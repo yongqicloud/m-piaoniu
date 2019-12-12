@@ -2,11 +2,21 @@ import React from 'react'
 import {ItemWrap} from './styles/styedItem'
 
 export default function Item(props) {
+
   if(props.type === 'home'){
     var {poster,star,shortname,venueName,timeRange,lowPrice} = props.data.recommendContent
   }else if( props.type === 'list'){
     var {poster,star,shortname,venueName,timeRange,lowPrice} = props.data
   }
+  if(props.data.activityType === 2){
+
+    return (
+      <div className="img-box">
+        <img src={poster} alt=""/>
+      </div>
+    )
+  }
+  
   return (
     <ItemWrap>
       <div>
@@ -21,6 +31,9 @@ export default function Item(props) {
             <div className="title">
               <span className="city">[天津]</span>
               {shortname}
+            </div>
+            <div className="activity-tag">
+              <div className="status-1">电</div>
             </div>
           </div>
           <div className="time-address">
@@ -39,11 +52,35 @@ export default function Item(props) {
             </div>
           }
           <div className="price-wrap">
-            <span className="price">{lowPrice}</span>
-            <span className="desc">元起</span>
+            {lowPrice?(
+                <HavePrice
+                  lowPrice={lowPrice}
+                />
+            ):(
+              <NoPrice></NoPrice>
+            )}
+            
           </div>
         </div>
       </div>
     </ItemWrap>
   )
 }
+
+function HavePrice(props) {
+  return (
+    <>
+      <span className="price">{props.lowPrice}</span>
+      <span className="desc">元起</span>
+    </>
+  )
+}
+
+function NoPrice() {
+  return (
+    <div className="status-text">
+      暂无余票
+    </div>
+  )
+}
+
