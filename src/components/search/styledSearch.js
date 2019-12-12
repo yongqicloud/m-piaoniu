@@ -16,7 +16,7 @@ export const SearchWrap = styled.div`
     border-radius: .03rem;
     .ui-wrap{
       height:100%;
-      display: block;
+      display: ${props => props.uiDisplay || 'block'};
       margin: 0 auto;
       position: relative;
       z-index: 1;

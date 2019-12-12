@@ -4,6 +4,9 @@ import styled from 'styled-components'
 export const TopBarWrap = styled.div`
   height:.44rem;
   display:flex;
+  position: relative;
+  z-index:10;
+  background:#fff;
   button{
     background:#fff;
     border:none;
@@ -16,13 +19,18 @@ export const TopBarWrap = styled.div`
     padding: 0 .20rem 0 .10rem;
     font-size: .16rem;
   }
-  button.cancel{
+  /* button.cancel{
     font-size: .16rem;
     line-height: .44rem;
     color: #666;
     padding: 0 .15rem 0 .05rem;
-  }
+  } */
 
-
-
+`
+export const CancelWrap = styled.button`
+    display:${props => props.display || 'none'};
+    font-size: .16rem;
+    line-height: .44rem;
+    color: #666;
+    padding: 0 .15rem 0 .05rem;
 `

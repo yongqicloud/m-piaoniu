@@ -3,7 +3,9 @@ import styled from 'styled-components'
 export const NavWrap = styled.div`
   width:100%;
   height:.4rem;
+  background:#fff;
   position: relative;
+  z-index:10;
   .nav-menu-wrap{
     width:100%;
     height:100%;

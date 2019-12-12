@@ -30,6 +30,7 @@ export default function GuessLike() {
         {
           list.data.map(item =>(
             <Item
+              type="home"
               key={item.recommendContent.id}
               data={item}
             />

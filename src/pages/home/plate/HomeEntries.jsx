@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import {Link} from 'react-router-dom'
 import {HomeEntriesWrap} from '../styles/styledHomeEntries'
 import {connect} from 'react-redux'
 
@@ -20,14 +20,14 @@ class HomeEntries extends Component {
           {
             list.map((item)=>(
               item.type ===  'max' &&
-              <a 
-                href=""
+              <Link 
+                to="/list"
                 className="entry" 
                 key={item.id} 
               >
                 <img src={item.category} alt=""/>
                 <div className="title">{item.title}</div>
-              </a>
+              </Link>
             ))
           }
         </div>

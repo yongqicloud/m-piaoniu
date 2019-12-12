@@ -6,10 +6,11 @@ import {Link} from 'react-router-dom'
 export default function Nav() {
   const store = useStore()
   let {root} = store.getState()
-  console.log(root)
-  root.list.unshift({
+  let myList = root.list.slice(0,9)
+  myList.unshift({
       id:9999,
       title:'全部分类',
+      
       type:'min',
   })
   // root
@@ -18,7 +19,7 @@ export default function Nav() {
       <div className="nav-menu-wrap">
         <div className="nav-menu">
           {
-            root.list.slice(0,9).map(item => (
+            myList.map(item => (
               <Link
                 key={item.id}
                 to="/list"

@@ -6,18 +6,14 @@ import List from 'pages/list/List'
 
 import 'assets/styles/reset.css'
 import './App.css'
-import list from './data/list'
-console.log(list)
+// import list from './data/list'
 function App() {
-  let data = {
-    list
-  }
   return (
     <div className="scroll-wrap">
       <Switch>
         <Route
           path="/home"
-          render={props=><Home {...data} {...props} />}
+          render={props=><Home {...props} />}
         />
         <Route
           path="/list"

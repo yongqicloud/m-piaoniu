@@ -3,22 +3,25 @@ import React, {useState,useEffect}from 'react'
 import {SearchWrap} from './styledSearch'
 
 
-export default function Search() {
+export default function Search(props) {
   const [focus, setFocus] = useState({
       isFocus:false
   })
   return (
-    <SearchWrap>
+    <SearchWrap
+      uiDisplay={props.isFocus === 'true' ? 'none' : 'block'}
+    >
       <div>
         <div className="ui-wrap">
           <span className="icon"></span>
-          <span className="placeholder">搜索明星、演出、场馆</span>
+          <span className="placeholder">搜索明星、演出、场馆{props.isFocus}</span>
         </div>
         <form action="">
           <input 
             type="text"
             className="search-input"
-            onFocus={()=> this.setFocus({isFocus:true})}
+            onFocus={()=>props.onReceiveFocusState('true')}
+            // onBlur={()=> props.onReceiveFocusState('false')}
           />
         </form>
       </div>

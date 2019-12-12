@@ -2,7 +2,11 @@ import React from 'react'
 import {ItemWrap} from './styles/styedItem'
 
 export default function Item(props) {
-  let {poster,star,shortname,venueName,timeRange,lowPrice} = props.data.recommendContent
+  if(props.type === 'home'){
+    var {poster,star,shortname,venueName,timeRange,lowPrice} = props.data.recommendContent
+  }else if( props.type === 'list'){
+    var {poster,star,shortname,venueName,timeRange,lowPrice} = props.data
+  }
   return (
     <ItemWrap>
       <div>
