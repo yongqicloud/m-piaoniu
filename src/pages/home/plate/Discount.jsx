@@ -44,6 +44,8 @@ export default function Discount() {
     <>
      <ListFrame
       title='近期热门'
+      path="hot"
+      headText="枪手票"
      >
      {
         hotDataList.data.map(item=>(
@@ -56,6 +58,8 @@ export default function Discount() {
      </ListFrame>
      <ListFrame
       title="折扣专区"
+      path="discount"
+      headText="折扣票"
      >
       {
         discountData.data.map(item=>(

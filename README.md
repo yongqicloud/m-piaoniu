@@ -10,6 +10,13 @@ https://gitee.com/qi_yun/m-piaoniu
 `react-redux` && `redux` && `redux-saga`
 `decorators(装饰器)`
 `Intersection Observer`
+`postMessage`
+#### 开发范式
+1、按功能阻止目录
+--容器组件
+--UI组件
+2、按角色阻止目录
+
 ###### css处理
 `styled-components`
 ###### 第三方库

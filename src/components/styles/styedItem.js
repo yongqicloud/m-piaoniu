@@ -9,9 +9,7 @@ export const ImgWrap = styled.div`
       padding-bottom: 0;
       background-color: #fff
   }
-  
 `
-
 export const ItemWrap = styled.div`
   padding:0 .15rem;
   position:relative;
@@ -42,20 +40,20 @@ export const ItemWrap = styled.div`
     flex-direction:column;
     .title-wrap{
       display:flex;
-      .title{
+      .item-title{
         font-size: 15px;
         color: #333;
         max-height: 44px;
         line-height: 22px;
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
         overflow: hidden;
         text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
         font-family: Helvetica Neue,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans;
         font-weight: 600;
         padding:0;
         
-        }
       }
       .activity-tag{
           flex-shrink: 0;
@@ -63,6 +61,7 @@ export const ItemWrap = styled.div`
           margin-left: .04rem;
           color: #fff;
           .status-1{
+            margin-top:3px;
             margin-right: 5px;
             border-radius: 2px;
             padding: 1px;

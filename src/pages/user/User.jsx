@@ -7,7 +7,9 @@ import OrderInfo from './OrderInfo'
 export default function User() {
   return (
     <>
-     <MyHeader></MyHeader>
+     <MyHeader
+      title="我的"
+     />
      <UserInfo></UserInfo>
      <MyOrder></MyOrder>
      <OrderInfo></OrderInfo>

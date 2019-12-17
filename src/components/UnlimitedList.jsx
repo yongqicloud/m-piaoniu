@@ -1,6 +1,6 @@
 import React , {useState,useEffect,useRef} from 'react'
 import {withRouter,useParams} from 'react-router-dom'
-import { Toast, WhiteSpace, WingBlank, Button } from 'antd-mobile';
+import { Toast } from 'antd-mobile';
 import Item from '@/Item'
 import {get} from 'utils/http'
 // loading tip
@@ -18,7 +18,7 @@ function UnlimitedList(props) {
   let [list,setList] = useState({
     data:[],
   })
-  let [pageNo,setPageNo] = useState({
+  let [pageNo] = useState({
     pageIndex: 1,
     pageSize:10,
     categoryId:categoryIdRef.current
@@ -35,7 +35,6 @@ function UnlimitedList(props) {
         }
       })
       await setList((state)=>({
-        // data:[...state.data,...result.data]
         data:result.data
       }))
 
@@ -74,7 +73,7 @@ function UnlimitedList(props) {
 
     fetchData()
     
-  },[categoryIdRef.current])
+  },[ref.current])
   return (
       <div className="wrap">
         {

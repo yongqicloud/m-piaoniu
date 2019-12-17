@@ -1,12 +1,12 @@
 import React from 'react'
 import {ItemWrap} from './styles/styedItem'
-
-export default function Item(props) {
+import {withRouter} from 'react-router-dom'
+function Item(props) {
 
   if(props.type === 'home'){
-    var {poster,star,shortname,venueName,timeRange,lowPrice} = props.data.recommendContent
+    var {poster,star,shortname,venueName,timeRange,lowPrice,soldOut,categoryId} = props.data.recommendContent
   }else if( props.type === 'list'){
-    var {poster,star,shortname,venueName,timeRange,lowPrice} = props.data
+    var {poster,star,shortname,venueName,timeRange,lowPrice,soldOut,categoryId} = props.data
   }
   if(props.data.activityType === 2){
 
@@ -18,7 +18,17 @@ export default function Item(props) {
   }
   
   return (
-    <ItemWrap>
+    <ItemWrap
+      onClick={()=>{
+        props.history.push(
+          "/details",
+          {
+            categoryId,
+            data:props.data,
+            type:props.type
+          })
+      }}
+    >
       <div>
         <div className="poster-wrap">
           <div className="poster"
@@ -28,7 +38,7 @@ export default function Item(props) {
         </div>
         <div className="info-wrap">
           <div className="title-wrap">
-            <div className="title">
+            <div className="item-title">
               <span className="city">[天津]</span>
               {shortname}
             </div>
@@ -52,12 +62,12 @@ export default function Item(props) {
             </div>
           }
           <div className="price-wrap">
-            {lowPrice?(
-                <HavePrice
-                  lowPrice={lowPrice}
-                />
-            ):(
+            {soldOut?(
               <NoPrice></NoPrice>
+            ):(
+              <HavePrice
+                lowPrice={lowPrice}
+              />
             )}
             
           </div>
@@ -66,6 +76,8 @@ export default function Item(props) {
     </ItemWrap>
   )
 }
+export default withRouter(Item)
+
 
 function HavePrice(props) {
   return (

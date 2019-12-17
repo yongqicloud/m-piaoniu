@@ -1,6 +1,8 @@
 import React from 'react'
 
 import {ListFrameWrap} from './styles/styledlistFrame'
+import {Link} from 'react-router-dom'
+
 
 export default function ListFrame(props) {
   return (
@@ -10,10 +12,15 @@ export default function ListFrame(props) {
           <div className="title">
             {props.title}
           </div>
-          <a 
-            href="#"
+          <Link 
+            to={{
+              pathname:`/morelist/${props.path}`,
+              state:{
+                title:props.headText
+              }
+            }}
             className="more"
-          >全部</a>
+          >全部</Link>
         </div>
         <div className="activities">
           <div className="wrap">

@@ -1,5 +1,4 @@
-import React , {useState,useEffect,useRef} from 'react'
-import { Toast, WhiteSpace, WingBlank, Button } from 'antd-mobile';
+import React from 'react'
 import { GuessLikeWrap } from '../styles/styledGuessLike'
 
 export default function GuessLike(props) {

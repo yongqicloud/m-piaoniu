@@ -4,6 +4,9 @@ import Home from 'pages/home/Home'
 import Page404 from '@/Page404'
 import List from 'pages/list/List'
 import User from 'pages/user/User'
+import Details from 'pages/details/Details'
+import VenueMap from 'pages/map/VenueMap'
+import MoreList from 'pages/hotList/MoreList'
 
 import 'assets/styles/reset.css'
 import './App.css'
@@ -23,6 +26,18 @@ function App() {
         <Route
           path="/user"
           component={User}
+        />
+        <Route
+          path="/details"
+          component={Details}
+        />
+        <Route
+          path="/venue"
+          component={VenueMap}
+        />
+        <Route
+          path="/morelist/:path"
+          component={MoreList}
         />
         <Redirect 
           from="/"

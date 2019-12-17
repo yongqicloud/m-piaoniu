@@ -1,12 +1,22 @@
 import React from 'react'
 import {ActiveItemWrap} from './styles/styledActiveItem'
+import {Link} from 'react-router-dom'
 
 export default function ActiveItem(props) {
-  let {properName,poster,lowPrice} = props.data
+  let {properName,poster,lowPrice,categoryId} = props.data
   return (
     <ActiveItemWrap>
       <div className="active-item">
-        <a href="">
+        <Link 
+          to={{
+            pathname:'/details',
+            state:{
+              categoryId,
+              data:props.data,
+              type:'list'
+            }
+          }}
+        >
           <div className="poster"
             style={{"backgroundImage":`url(${poster})`}}
           ></div>
@@ -15,7 +25,7 @@ export default function ActiveItem(props) {
             <span className="price-num">￥{lowPrice}</span>
             <span className="price-desc">起</span>
           </div>
-        </a>
+        </Link>
       </div>
     </ActiveItemWrap>
   )

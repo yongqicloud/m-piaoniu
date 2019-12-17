@@ -4,7 +4,6 @@ import {withRouter} from 'react-router-dom'
 import { MyHeaderWrap }from './styledMyHeader'
 
 function MyHeader(props) {
-  console.log(props)
   return (
     <MyHeaderWrap>
       <div className="content-wrap">
@@ -16,7 +15,7 @@ function MyHeader(props) {
           <div className="icon"></div>
         </div>
         <div className="content">
-          <div className="title">我的</div>
+          <div className="title">{props.title}</div>
         </div>
       </div>
     </MyHeaderWrap>

@@ -1,12 +1,12 @@
-import React, {useState,useEffect}from 'react'
+import React from 'react'
 
 import {SearchWrap} from './styledSearch'
 
 
 export default function Search(props) {
-  const [focus, setFocus] = useState({
-      isFocus:false
-  })
+  // const [focus, setFocus] = useState({
+  //     isFocus:false
+  // })
   return (
     <SearchWrap
       uiDisplay={props.isFocus === 'true' ? 'none' : 'block'}
