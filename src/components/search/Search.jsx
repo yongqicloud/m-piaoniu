@@ -4,9 +4,7 @@ import {SearchWrap} from './styledSearch'
 
 
 export default function Search(props) {
-  // const [focus, setFocus] = useState({
-  //     isFocus:false
-  // })
+  
   return (
     <SearchWrap
       uiDisplay={props.isFocus === 'true' ? 'none' : 'block'}
@@ -14,7 +12,7 @@ export default function Search(props) {
       <div>
         <div className="ui-wrap">
           <span className="icon"></span>
-          <span className="placeholder">搜索明星、演出、场馆{props.isFocus}</span>
+          <span className="placeholder">搜索明星、演出、场馆</span>
         </div>
         <form action="">
           <input 
