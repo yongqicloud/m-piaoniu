@@ -34,12 +34,13 @@ export const ItemWrap = styled.div`
     }
   }
   .info-wrap{
-    flex: 1;
+    width:calc(100% - 0.92rem);
     padding-top:.15rem;
     display:flex;
     flex-direction:column;
     .title-wrap{
       display:flex;
+      overflow:hidden;
       .item-title{
         font-size: 15px;
         color: #333;

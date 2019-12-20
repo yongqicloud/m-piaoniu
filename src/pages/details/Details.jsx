@@ -1,5 +1,6 @@
 import React,{useEffect,useRef,useState} from 'react'
 
+import {withRouter,useLocation} from 'react-router-dom'
 import MyHeader from '@/myheader/MyHeader'
 import DeatilsHeader from './DeatilsHeader'
 import {IntroduceWrap} from './styled/styledDeatilsHeader'
@@ -7,7 +8,6 @@ import RelatedShow from './RelatedShow'
 import Credit from './Credit'
 import BuyButton from './BuyButton'
 import Item from '@/Item'
-import {withRouter,useLocation} from 'react-router-dom'
 
 import {get} from 'utils/http'
 

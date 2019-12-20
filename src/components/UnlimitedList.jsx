@@ -11,19 +11,21 @@ function loadingToast() {
 }
  
 function UnlimitedList(props) {
+  let {sortID} = props.sort || ''
+  let {seatMap} =props.sort || 'false'
+  let {startTime,endTime} = props.sort || ''
   let { categoryId }= useParams()
-  let categoryIdRef = useRef(null)
-  let num = categoryId === '9999' ? '2' : categoryId
-  categoryIdRef.current = num
+  // 频道id
+  categoryId = (categoryId === '9999' ? '2' : categoryId)
   let [list,setList] = useState({
     data:[],
   })
   let [pageNo] = useState({
     pageIndex: 1,
     pageSize:10,
-    categoryId:categoryIdRef.current
+    categoryId,
   })
-  const ref = useRef(pageNo)
+  const refPageNo = useRef(pageNo)
   useEffect(()=>{
     const fetchData = async ()=>{
       let result = await get({
@@ -31,7 +33,11 @@ function UnlimitedList(props) {
         params:{
           pageIndex:pageNo.pageIndex,
           pageSize:pageNo.pageSize,
-          categoryId:categoryIdRef.current
+          categoryId,
+          sort:sortID,
+          seatMap,
+          startTime,
+          endTime
         }
       })
       await setList((state)=>({
@@ -50,13 +56,17 @@ function UnlimitedList(props) {
           if(entry.isIntersecting ){
             console.log('看到了')
             loadingToast()
-            ref.current.pageIndex +=1
+            refPageNo.current.pageIndex +=1
             let result = await get({
               url:props.path,
               params:{
-                pageIndex:ref.current.pageIndex,
-                pageSize:ref.current.pageSize,
-                categoryId:categoryIdRef.current
+                pageIndex:refPageNo.current.pageIndex,
+                pageSize:refPageNo.current.pageSize,
+                categoryId,
+                sort:sortID,
+                seatMap,
+                startTime,
+                endTime
               }
             })
             
@@ -73,17 +83,27 @@ function UnlimitedList(props) {
 
     fetchData()
     
-  },[ref.current])
+  },[categoryId,sortID,seatMap,startTime,endTime])
   return (
-      <div className="wrap">
+      <div 
+        className="wrap"
+        style={{
+          overflow:'hidden'
+        }}
+      >
         {
-          list.data.map((item,index) =>(
+          list.data.length > 0
+          ?list.data.map((item,index) =>(
             <Item
               type={props.type}
               key={item.recommendContent ? item.recommendContent.id : item.id}
               data={item}
             />
           ))
+          :<div 
+            className="empty-tip"
+            style={{width:'100%',padding:'10px 0',textAlign:'center'}}
+          >暂无数据哦!</div>
         }
         <div id="observe"></div>
       </div>

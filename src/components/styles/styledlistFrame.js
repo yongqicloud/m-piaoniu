@@ -5,6 +5,7 @@ import more from 'assets/images/more.png'
 const ListFrameWrap = styled.div`
   .activity-floor{
     padding:.32rem 0 .08rem;
+    overflow:hidden;
     .header{
       display:flex;
       justify-content:space-between;
